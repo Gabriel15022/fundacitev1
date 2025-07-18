@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema FUNDACITE</title>
+    
+    <link rel="icon" href="{{ url_for('static', filename='iconoprog.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="{{ url_for('static', filename='fundacitelogo.png') }}" alt="Logo de FUNDACITE" class="logo">
+                <p id="welcome-message">Bienvenido</p> </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" id="view-tasks-btn">
+                    <i class="fas fa-list-check nav-icon"></i>
+                    Ver Tareas
+                </a>
+                <a href="#" class="nav-item" id="create-task-btn">
+                    <i class="fas fa-file-circle-plus nav-icon"></i>
+                    Crear Tarea
+                </a>
+            </nav>
+            <div class="nav-item-export">
+                <button id="export-completed-btn" class="btn btn-secondary btn-block">
+                    <i class="fas fa-check-circle nav-icon"></i> Exportar Completadas
+                </button>
+                <button id="export-pending-attended-btn" class="btn btn-secondary btn-block">
+                    <i class="fas fa-hourglass-half nav-icon"></i> Exportar Pendientes/Atendidas
+                </button>
+                <button id="export-selected-btn" class="btn btn-secondary btn-block">
+                    <i class="fas fa-file-arrow-down nav-icon"></i> Exportar Seleccionados
+                </button>
+                <button id="export-all-btn" class="btn btn-secondary btn-block">
+                    <i class="fas fa-file-export nav-icon"></i> Exportar Todos
+                </button>
+            </div>
+            <a href="#" class="nav-item nav-item-logout" id="logout-btn">
+                <i class="fas fa-right-from-bracket nav-icon"></i>
+                Cerrar Sesión
+            </a>
+        </aside>
+        <main class="main-content">
+            <header class="main-header">
+                <h1 id="content-title">Listado de Tareas</h1>
+            </header>
+            <div id="content-area" class="content-area">
+                </div>
+        </main>
+    </div>
+    
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

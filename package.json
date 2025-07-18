@@ -1,0 +1,12 @@
+{
+  "name": "mi-aplicacion-fundacite",
+  "version": "1.0.0",
+  "description": "Proyecto FUNDACITE",
+  "scripts": {
+    "start": "echo 'Abre index.html en tu navegador'",
+    "test": "echo 'No hay tests configurados'"
+  },
+  "keywords": [],
+  "author": "TuNombre",
+  "license": "MIT"
+}

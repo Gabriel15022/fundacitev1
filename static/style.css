@@ -1,0 +1,425 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --background-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --shadow-light: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Estilos de la página de login */
+.login-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.login-container::before,
+.login-container::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.login-container::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -150px;
+    background: linear-gradient(135deg, #FF6B6B, #FFC94A);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(30deg);
+    opacity: 0.6;
+}
+
+.login-container::after {
+    width: 300px;
+    height: 300px;
+    bottom: -120px;
+    left: -120px;
+    background: linear-gradient(45deg, #4A90E2, #7D4AE2);
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(-45deg);
+    opacity: 0.6;
+}
+
+.login-shape-1 {
+    position: absolute;
+    top: 50px;
+    left: 20%;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(90deg, #b27fe3, #553e83);
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%;
+    transform: rotate(15deg);
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.login-shape-2 {
+    position: absolute;
+    bottom: 30%;
+    right: 15%;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(90deg, #ff9966, #ff5e62);
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.login-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.login-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.login-header img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+.login-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.input-group {
+    margin-bottom: 1rem;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    height: 44px; /* Asegura el mismo tamaño para todos los campos de texto/password */
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* --- Button Styles --- */
+.btn {
+    display: inline-block; /* Default to inline-block for flexibility */
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Neutral grey for export buttons */
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Red for delete/danger */
+    color: white;
+}
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin-right: 0.5rem; /* Space between small buttons */
+    width: auto; /* Small buttons are auto-width by default */
+}
+
+/* Utility class for full-width buttons */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Specific styling for login button (needs to be full width) */
+.login-card .btn { /* This targets the submit button in login-card */
+    margin-top: 1.5rem;
+    display: block; /* Ensure full width */
+    width: 100%; /* Ensure full width */
+}
+
+.message-area {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Estilos de la página principal */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-light);
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: background-color 0.3s ease, border-left-color 0.3s ease;
+}
+.nav-item:hover, .nav-item.active {
+    background-color: #f0f0f0;
+    border-left-color: var(--primary-color);
+}
+.nav-icon {
+    width: 20px;
+    text-align: center;
+    margin-right: 15px;
+}
+.nav-item-logout {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+.nav-item-export {
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
+    padding: 0 1.5rem; /* Added padding to align buttons */
+}
+/* Ensure buttons within nav-item-export are block and have spacing */
+.nav-item-export .btn {
+    margin-top: 0.5rem; /* Space between buttons */
+}
+.nav-item-export .btn:first-child {
+    margin-top: 0; /* No top margin for the very first button */
+}
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    margin-left: 250px;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.main-header {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.content-area {
+    padding: 1rem;
+}
+
+/* --- ESTILOS ADICIONALES PARA LA TABLA --- */
+
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    margin-top: -1rem;
+    min-width: 1000px;
+}
+
+thead th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+tbody tr {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+tbody td {
+    padding: 1.5rem;
+    vertical-align: middle;
+}
+
+tbody tr td:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+tbody tr td:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.btn-sm { /* Redefine btn-sm for table buttons, if they need different margin/width */
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    width: auto;
+    display: inline-block; /* Ensure they are inline */
+}
+/* Estilos para la barra de búsqueda */
+.search-container {
+    margin-bottom: 1.5rem;
+}
+#search-bar {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+#search-bar:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Media query para hacer el diseño responsivo en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-bottom: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .sidebar-header {
+        padding-bottom: 1rem;
+        border-bottom: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 1rem;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1rem;
+    }
+
+    .nav-item {
+        margin: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    .nav-item-export {
+        padding: 0 1rem 1rem;
+        flex-direction: row; /* Buttons in a row */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-top: 1px solid var(--border-color);
+        padding-top: 1rem;
+    }
+
+    .nav-item-export .btn { /* Buttons inside export section */
+        width: auto; /* Allow buttons to adjust to content in a row */
+        flex-shrink: 0;
+        margin-right: 0.5rem; /* Space between buttons */
+        margin-bottom: 0; /* Remove vertical margin in row layout */
+        display: inline-block; /* Ensure they are inline */
+    }
+
+    .nav-item-logout {
+        padding: 1rem 1rem 0;
+    }
+}
